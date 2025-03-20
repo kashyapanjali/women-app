@@ -26,6 +26,7 @@ body {
 	justify-content: space-between;
 	align-items: center;
 	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	position: relative;
 }
 
 .logo h1 {
@@ -482,4 +483,25 @@ body {
 	.category-filters button {
 		width: 100%;
 	}
+}
+
+.auth-section {
+	position: relative;
+	margin: 0 1rem;
+}
+
+.auth-toggle-button {
+	background-color: transparent;
+	color: white;
+	border: 2px solid white;
+	border-radius: 25px;
+	padding: 0.6rem 1.2rem;
+	font-weight: 600;
+	cursor: pointer;
+	transition: all 0.2s ease;
+}
+
+.auth-toggle-button:hover {
+	background-color: white;
+	color: #a8336e;
 }

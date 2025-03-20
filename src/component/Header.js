@@ -1,7 +1,10 @@
 // components/Header.js
-import React from "react";
+import React, { useState } from "react";
+import Auth from "./Auth";
 
 function Header({ cartItemCount, toggleCart, onSearch }) {
+	const [showAuth, setShowAuth] = useState(false);
+
 	return (
 		<header className='header'>
 			<div className='logo'>
@@ -15,7 +18,15 @@ function Header({ cartItemCount, toggleCart, onSearch }) {
 					onChange={(e) => onSearch(e.target.value)}
 				/>
 			</div>
-			<div className='sign-in'>Hello,sign in</div>
+			<div className='auth-section'>
+				<button 
+					className='auth-toggle-button'
+					onClick={() => setShowAuth(!showAuth)}
+				>
+					Sign In
+				</button>
+				{showAuth && <Auth />}
+			</div>
 			<div className='cart-button'>
 				<button onClick={toggleCart}>Cart ({cartItemCount})</button>
 			</div>
